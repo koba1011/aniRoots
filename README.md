@@ -1,24 +1,45 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## DB設計
 
-Things you may want to cover:
+### users テーブル
 
-* Ruby version
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| name               | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| profile            | text   |                           |
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :posts
+- has_many :favorites
 
-* Database creation
+### posts テーブル
 
-* Database initialization
+| Column             | Type       | Options       |
+| ------------------ | ---------- | ------------- |
+| title              | string     | null: false   |
+| describe           | text       | null: false   |
+| favorite_scene     | text       |               |
+| favorite_character | text       |               |
+| spoiler            | integer    |               |
+| user               | references | foreign: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :user
+- has_many :favorites
 
-* Deployment instructions
+### favorites テーブル
 
-* ...
+| Column    | Type       | Options           |
+| --------- | ---------- | ----------------- |
+| user      | references | foreign_key: true |
+| post      | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
