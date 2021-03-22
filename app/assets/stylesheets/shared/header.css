@@ -99,12 +99,12 @@
 /*ログインしていない時の表示*/
 
 .login-signup {
-  margin: 0 -25px 0 -67px ;
+  margin: 0 -25px 0 -41px ;
   font-size: 14px;
 }
 
 .header-login{
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   margin-right: 10px;
 }
@@ -115,7 +115,7 @@
 }
 
 .header-signup {
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
