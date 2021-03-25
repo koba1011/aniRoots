@@ -1,0 +1,42 @@
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <div class="header-img">
+      <%= link_to image_tag("aniRoots3.png", class: "roots-icon2"), "/" %>
+    </div>
+    <%= form_with(class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "検索", class: "input-box" %>
+    <% end %>
+
+    <div class='nav'>
+      <div class='lists-right'>
+        <% if user_signed_in? %>
+          <div class="icons">
+            <%= link_to image_tag("本棚のアイコン.png", class: "header-star-icon"), "", class: "star-link"%>
+            <div class="dropdown">
+              <div class="header-user-icon" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%# プロフィール画像の登録状態で表示を変更 %>
+                  <%= image_tag "profile_icon.png", class: "user-icon" %>
+                <%# /プロフィール画像の登録状態で表示を変更 %>
+              </div>
+              
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to "プロフィール", "", class: "dropdown-item" %>
+                <%= link_to "プロフィール編集", "", class: "dropdown-item"%>
+                <%= link_to "お気に入り一覧", "", class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </div>
+          <div>
+        <% else %> 
+          <%# 未ログイン時の表示 %>
+          <div class="login-signup">
+            <%= link_to "ログイン", new_user_session_path, class: "header-login" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "header-signup" %>
+          </div>
+          <%# / 未ログイン時の表示 %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
