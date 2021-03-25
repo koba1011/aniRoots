@@ -4,17 +4,17 @@
   <div class="posts-post-main">
     <h2 class="posts-post-title">あなたが観たアニメを共有しよう</h2>
     <%= form_with model: @post, url: posts_path, local: true do |f| %>
-      <div class="video-upload">
+      <div class="image-upload">
         <div class="weight-bold-text">
-          画像ファイルを選択
+          画像をアップロード
         </div>
-        <div class="click-upload">
-          <p>
-            クリックしてファイルをアップロード
-          </p>
-          <%= f.file_field :video, id:"posts-video" %>
+        <div class="form-group-top">
+          <%= f.label :image, class:"post-image-up" do %>
+            <img id="image-back" class="image-back" >
+            <%= image_tag "プラスアイコン.png", class: "post-image-icon" %>
+            <%= f.file_field :image, class: 'uploader', style: 'display:none' %>
+          <% end %>
         </div>
-      </div>
       <div class="new-posts">
         <h2 class="posts-post-text">作品名</h2>
         <%= f.text_area :title, class:"title-form", id:"post-title_url", placeholder:"タイトル" %>
@@ -22,13 +22,16 @@
           詳細
         </div>
         <%= f.text_area :describe, class:"posts-text", id:"post-describe", placeholder:"感想" ,rows:"5" ,maxlength:"2000" %>
-        <%= f.text_area :favorite_scene, class:"posts-text", id:"post-favorite_scene", placeholder:"好きなシーン" %>
-        <%= f.text_area :favorite_character, class:"posts-text", id:"post-favorite_character", placeholder:"好きなキャラクター" %>
+        <%= f.text_area :favorite_scene, class:"posts-text2", id:"post-favorite_scene", placeholder:"好きなシーン" %>
+        <%= f.text_area :favorite_character, class:"posts-text2", id:"post-favorite_character", placeholder:"好きなキャラクター" %>
         
         <div class="weight-bold-text2">
-          URL
+          ネタバレ
         </div>
-        <%= f.text_area :share_url, class:"posts-url", id:"post-share_url", placeholder:"オススメのお店や観光スポットをURLやテキストを付けて共有しよう!" %>
+        <div class="check-content">
+          <%= f.check_box :spoiler, {class: "check_box"}, checked_value = "1", unchecked_value = "0" %>
+          <div class="check-text">ネタバレがある場合はチェックを入れてください</div>
+        </div>
       </div>
       <div class="post-btn-contents">
         <%= f.submit "投稿する" ,class:"btn btn-secondary btn-block" %>
