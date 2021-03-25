@@ -1,0 +1,135 @@
+.posts-post-contents {
+  background-color: #fff;
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.posts-post-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+  margin-top: 5vh;
+}
+
+.posts-post-title {
+  font-size: 22px;
+  color: rgb(117, 117, 117);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.form-group-top {
+  width: 50%;
+  margin-top: 30px;
+}
+
+.post-image-up {
+  height: 25vh;
+  width: 10vw;
+}
+
+.image-back {
+  height: 25vh;
+  width: 10vw;
+  border-radius: 3px;
+  border: 1px solid rgb(206, 206, 206);
+  text-decoration: none;
+  position: absolute;
+}
+
+.post-image-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.weight-bold-text2 {
+  font-weight: bold;
+  min-width: 170px;
+  margin-top: 2vh;
+}
+
+.new-posts {
+  padding: 5vh 0 5vh;
+}
+
+.posts-post-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.title-form {
+  width: 100%;
+  height: 5vh;
+  padding: 8px 16px 0px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+  margin: 2vh 0 2vh;
+}
+
+.posts-text {
+  width: 100%;
+  height: 45vh;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+  margin-top: 2vh;
+}
+
+.posts-text2 {
+  width: 100%;
+  height: 5vh;
+  padding: 8px 16px 0px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+  margin-top: 2vh;
+}
+
+.check-content {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px;
+}
+
+.check-text {
+  margin-top: -28px;
+  margin-left: 40px;
+  font-size: 14px;
+}
+
+.check_box {
+  margin-top: 20px;
+  height: 25px;
+  width: 25px;
+}
+
+.post-btn-contents {
+  width: 100%;
+  text-align: center;
+}
+

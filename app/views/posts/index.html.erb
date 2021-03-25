@@ -1,1 +1,53 @@
 <%= render "shared/header" %>
+
+<div class="main">
+  <% if @posts.present? %>
+    <div class="post-contents">
+      <% @posts.each do |post| %>
+        <div class="post-content">
+            <%= link_to (image_tag post.image, class: "post-image"), "" %>
+            <div class="post-info">
+              <div class="post-title">
+                <%= link_to post.title, "", class: "title-link" %>
+              </div>
+              <div class="post-index-time">
+                <%= time_ago_in_words(post.created_at)+"前に投稿" %>
+                <% if post.spoiler == 1 %>
+                  <span class="post-spoiler-text">ネタバレ有り</span>
+                <% end %>
+              </div>
+              <div class="post-favorite">
+                  <div class="post-favorite-text">好きなキャラクター</div>
+                  <%if post.favorite_character.present? %>
+                    <span class="post-favorite-character"><%= post.favorite_character %></span>
+                  <% else %>
+                    <span class="non-favorite-text">特になし</span>
+                  <% end %>
+                  <div class="post-favorite-text">好きなシーン</div>
+                    <%if post.favorite_scene.present? %>
+                      <span class="post-favorite-scene"><%= post.favorite_scene %></span>
+                    <% else %>
+                      <span class="non-favorite-text">特になし</span>
+                    <% end %>
+              </div>
+              <div class="post-user-name">
+                <span class="post-text">投稿者</span>
+                <%= link_to (image_tag "profile_icon.png", class: "post-icon"), "" %>
+                <%= link_to post.user.name, "", class: "post-name-link" %>
+                <%= link_to "感想はこちら", "", class: "post-link" %>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  <%# 投稿がないときの表示 %>
+  <% else %>
+    <div class="blank-index">
+    </div>
+  <% end %>
+  <%# 投稿がないときの表示 %>
+</div>
+<%= link_to(new_post_path, class: 'post-btn') do%>
+  <span class='post-btn-text'>投稿する</span>
+  <%= image_tag '定番ペンのフリーアイコン素材.png', class: "post-btn-icon"%>
+<% end %>
