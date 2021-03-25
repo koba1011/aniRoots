@@ -1,17 +1,80 @@
-.main {
-}
-
 .post-contents {
   width: 40vw;
   margin: 110px auto 50px;
 }
-
 
 .post-content {
   background-color: rgba(0, 0, 0, 0.664);
   margin-bottom: 10vh;
   border: 1px solid rgba(216, 216, 216, 0.753);
   border-radius: 6px;
+}
+
+.post-image {
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.post-info {
+  display: inline-block;
+  margin-left: 15px;
+  position: absolute;
+}
+
+.post-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.title-link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.title-link:hover {
+  text-decoration: none;
+  color: rgb(151, 151, 151);
+}
+
+.post-index-time {
+  font-size: 14px;
+  margin-top: 5px;
+  color: white;
+  margin-left: 130px;
+}
+
+.post-spoiler-text {
+  font-size: 12px;
+  margin-left: 10px;
+  color: white;
+}
+
+.post-favorite {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.post-favorite-text {
+  color: white;
+  margin-top: 10px;
+}
+
+.post-favorite-character {
+  color: white;
+  font-size: 12px;
+}
+
+.non-favorite-text {
+  color: white;
+  font-size: 12px;
+}
+
+.post-favorite-scene {
+  color: white;
+  font-size: 12px;
 }
 
 .post-user-name {
@@ -45,94 +108,10 @@
   margin-left: 25px;
 }
 
-.post-image {
-  width: 180px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.post-info {
-  display: inline-block;
-  margin-left: 15px;
-  position: absolute;
-}
-
-.post-title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.post-favorite {
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-
-.post-favorite-text {
-  color: white;
-  margin-top: 10px;
-}
-
-.post-favorite-character {
-  color: white;
-  font-size: 12px;
-}
-
-.non-favorite-text {
-  color: white;
-  font-size: 12px;
-}
-
-.post-favorite-scene {
-  color: white;
-  font-size: 12px;
-}
-
-.title-link {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-
-.title-link:hover {
-  text-decoration: none;
-  color: rgb(151, 151, 151);
-}
-
-.post-index-time {
-  font-size: 14px;
-  margin-top: 5px;
-  color: white;
-  margin-left: 130px;
-}
-
-.post-spoiler-text {
-  font-size: 12px;
-  margin-left: 10px;
-  color: white;
-}
-
 /* 投稿がないときの表示 */
 
 .blank-index {
   margin: 50px auto ;
-}
-
-.index-video {
-  width: 100%;
-  height: 680px;
-  object-fit: cover;
-  position: absolute;
-}
-
-.blank-index-text {
-  width: 650px;
-  position: relative;
-  top: 20px;
-  left: 5%;
-  font-family: 'TsukuBRdGothic-Regular',sans-serif;
-  font-weight: 300;
-  color: rgba(0, 0, 0, 0.562);
 }
 
 /* 投稿がないときの表示 */
