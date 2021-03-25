@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+
+<div class="posts-post-contents">
+  <div class="posts-post-main">
+    <h2 class="posts-post-title">あなたが観たアニメを共有しよう</h2>
+    <%= form_with model: @post, url: posts_path, local: true do |f| %>
+      <div class="video-upload">
+        <div class="weight-bold-text">
+          画像ファイルを選択
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :video, id:"posts-video" %>
+        </div>
+      </div>
+      <div class="new-posts">
+        <h2 class="posts-post-text">作品名</h2>
+        <%= f.text_area :title, class:"title-form", id:"post-title_url", placeholder:"タイトル" %>
+        <div class="weight-bold-text">
+          詳細
+        </div>
+        <%= f.text_area :describe, class:"posts-text", id:"post-describe", placeholder:"感想" ,rows:"5" ,maxlength:"2000" %>
+        <%= f.text_area :favorite_scene, class:"posts-text", id:"post-favorite_scene", placeholder:"好きなシーン" %>
+        <%= f.text_area :favorite_character, class:"posts-text", id:"post-favorite_character", placeholder:"好きなキャラクター" %>
+        
+        <div class="weight-bold-text2">
+          URL
+        </div>
+        <%= f.text_area :share_url, class:"posts-url", id:"post-share_url", placeholder:"オススメのお店や観光スポットをURLやテキストを付けて共有しよう!" %>
+      </div>
+      <div class="post-btn-contents">
+        <%= f.submit "投稿する" ,class:"btn btn-secondary btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>
