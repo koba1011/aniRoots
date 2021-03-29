@@ -37,7 +37,7 @@
                 <% else %>
                   <%= link_to (image_tag "profile_icon.png", class: "post-icon"), "" %>
                 <% end %>
-                <%= link_to post.user.name, "", class: "post-name-link" %>
+                <%= link_to post.user.name, user_path(post.user.id), class: "post-name-link" %>
                 <%= link_to "感想はこちら", post_path(post.id), class: "post-link" %>
               </div>
             </div>
