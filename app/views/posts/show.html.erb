@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="post-show-btn float-right">
-          <%= button_to "投稿の編集", "", method: :get, class: "btn btn-secondary btn-sm" %>
+          <%= button_to "投稿の編集", edit_post_path(@post.id), method: :get, class: "btn btn-secondary btn-sm" %>
         </div>
       <% end %>
       <%# /編集、削除機能 %>

@@ -1,0 +1,40 @@
+<%= render "shared/header" %>
+
+<div class="posts-post-contents">
+  <div class="posts-post-main">
+    <%= form_with model: @post, local: true do |f| %>
+      <div class="image-upload">
+        <div class="weight-bold-text">
+          画像を変更
+        </div>
+        <div class="form-group-top">
+          <%= f.label :image, class:"post-image-up" do %>
+            <%= image_tag @post.image, id: "image-back", class: "image-back"%>
+            <%= image_tag "プラスアイコン.png", class: "post-image-icon" %>
+            <%= f.file_field :image, class: 'uploader', style: 'display:none' %>
+          <% end %>
+        </div>
+      <div class="new-posts">
+        <h2 class="posts-post-text">作品名</h2>
+        <%= f.text_area :title, class:"title-form", id:"post-title_url", placeholder:"タイトル" %>
+        <div class="weight-bold-text">
+          詳細
+        </div>
+        <%= f.text_area :describe, class:"posts-text", id:"post-describe", placeholder:"感想" ,rows:"5" ,maxlength:"2000" %>
+        <%= f.text_area :favorite_scene, class:"posts-text2", id:"post-favorite_scene", placeholder:"好きなシーン" %>
+        <%= f.text_area :favorite_character, class:"posts-text2", id:"post-favorite_character", placeholder:"好きなキャラクター" %>
+        
+        <div class="weight-bold-text2">
+          ネタバレ
+        </div>
+        <div class="check-content">
+          <%= f.check_box :spoiler, {class: "check_box"}, checked_value = "1", unchecked_value = "0" %>
+          <div class="check-text">ネタバレがある場合はチェックを入れてください</div>
+        </div>
+      </div>
+      <div class="post-btn-contents">
+        <%= f.submit "編集する" ,class:"btn btn-secondary btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>
