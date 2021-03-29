@@ -8,7 +8,7 @@
             <%= link_to (image_tag post.image, class: "post-image"), post_path(post.id) %>
             <div class="post-info">
               <div class="post-title">
-                <%= link_to post.title, "", class: "title-link" %>
+                <%= link_to post.title, post_path(post.id), class: "title-link" %>
               </div>
               <div class="post-index-time">
                 <%= time_ago_in_words(post.created_at)+"前に投稿" %>
@@ -32,7 +32,11 @@
               </div>
               <div class="post-user-name">
                 <span class="post-text">投稿者</span>
-                <%= link_to (image_tag "profile_icon.png", class: "post-icon"), "" %>
+                <%if post.user.image.present? %>
+                  <%= link_to (image_tag post.user.image, class: "post-icon"), "" %>
+                <% else %>
+                  <%= link_to (image_tag "profile_icon.png", class: "post-icon"), "" %>
+                <% end %>
                 <%= link_to post.user.name, "", class: "post-name-link" %>
                 <%= link_to "感想はこちら", post_path(post.id), class: "post-link" %>
               </div>

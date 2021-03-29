@@ -46,7 +46,11 @@
       <%# /編集、削除機能 %>
     </div>
     <div class="post-show-user">
-      <%= link_to (image_tag "profile_icon.png", class: "post-show-user-icon"), "" %>
+      <%if @post.user.image.present? %>
+        <%= link_to (image_tag @post.user.image, class: "post-show-user-icon"), "" %>
+      <% else %>
+        <%= link_to (image_tag "profile_icon.png", class: "post-show-user-icon"), "" %>
+      <% end %>
       <%=link_to @post.user.name, "", class: "post-show-user-link"%>
     </div>
     <div class="post-show-describe">
