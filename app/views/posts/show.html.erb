@@ -34,7 +34,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                <%= link_to "投稿の削除", "", method: :delete, class: "btn btn-primary" %>
+                <%= link_to "投稿の削除", post_path(@post.id), method: :delete, class: "btn btn-primary" %>
               </div>
             </div>
           </div>
