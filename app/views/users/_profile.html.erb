@@ -1,0 +1,22 @@
+<div class="user-profile d-flex flex-row">
+  <div class="user-profile-img">
+    <%# プロフィール画像の登録状態で表示を変更 %>
+    <% if @user.image.present? %>
+      <%= image_tag @user.image, class: "user-show-icon" %>
+    <% else %>
+      <%= image_tag "profile_icon.png", class: "user-show-icon" %>
+    <% end %>
+    <%# /プロフィール画像の登録状態で表示を変更%>
+  </div>
+  <ul class="user-show-right ">
+    <div class="user-show-user-name"><%= @user.name %>
+    </div>
+    <%= link_to user_path(@user.id), class: "user-show-count-link" do %>
+      <li class="user-show-postcount">投稿<%= @user.posts.count %>件
+      </li>
+    <% end %>
+    <% if @user.profile.present? %>
+      <li class="user-show-profile"><%=safe_join(@user.profile.split("\n"),tag(:br)) %></li>
+    <% end %>
+  </ul>
+</div>

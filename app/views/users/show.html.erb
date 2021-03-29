@@ -1,0 +1,14 @@
+<%= render "shared/header" %>
+
+<div class="user-show-contents">
+  <div class="user-show-content">
+    <%= render 'profile' %>
+    <div class="user-show-posts">
+      <% @posts.each do |post| %>
+        <div class="user-show-video">
+          <%= link_to (image_tag post.image, class: "user-show-post-video"), post_path(post.id) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
