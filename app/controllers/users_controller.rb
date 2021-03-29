@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:show, :edit, :update]
+
+  def show
+    @posts = @user.posts.order("created_at DESC")
+  end
 
   def edit
     if @user.id != current_user.id
