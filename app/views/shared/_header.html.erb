@@ -14,14 +14,15 @@
             <%= link_to image_tag("本棚のアイコン.png", class: "header-star-icon"), "", class: "star-link"%>
             <div class="dropdown">
               <div class="header-user-icon" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%# プロフィール画像の登録状態で表示を変更 %>
+                <% if current_user.image.present? %>
+                  <%= image_tag current_user.image, class: "user-icon" %>
+                <% else %>
                   <%= image_tag "profile_icon.png", class: "user-icon" %>
-                <%# /プロフィール画像の登録状態で表示を変更 %>
+                <% end %>
               </div>
-              
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <%= link_to "プロフィール", "", class: "dropdown-item" %>
-                <%= link_to "プロフィール編集", "", class: "dropdown-item"%>
+                <%= link_to "プロフィール編集", edit_user_path(current_user.id), class: "dropdown-item"%>
                 <%= link_to "お気に入り一覧", "", class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
