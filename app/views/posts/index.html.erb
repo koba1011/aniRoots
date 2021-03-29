@@ -5,7 +5,7 @@
     <div class="post-contents">
       <% @posts.each do |post| %>
         <div class="post-content">
-            <%= link_to (image_tag post.image, class: "post-image"), "" %>
+            <%= link_to (image_tag post.image, class: "post-image"), post_path(post.id) %>
             <div class="post-info">
               <div class="post-title">
                 <%= link_to post.title, "", class: "title-link" %>
@@ -34,7 +34,7 @@
                 <span class="post-text">投稿者</span>
                 <%= link_to (image_tag "profile_icon.png", class: "post-icon"), "" %>
                 <%= link_to post.user.name, "", class: "post-name-link" %>
-                <%= link_to "感想はこちら", "", class: "post-link" %>
+                <%= link_to "感想はこちら", post_path(post.id), class: "post-link" %>
               </div>
             </div>
         </div>

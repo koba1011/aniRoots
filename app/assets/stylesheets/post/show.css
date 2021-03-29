@@ -1,0 +1,152 @@
+.post-show-contents {
+  background-color: #fff;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 0px auto 50px;
+  padding-top: 100px;
+}
+
+.post-show-content {
+  margin-bottom: 10vh;
+  padding-bottom: 2vh;
+  width: 70vw;
+}
+
+.post-image-content {
+  height: 60vh;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.show-image {
+  height: 100%;
+  width: 23vw;
+  border-radius: 10px
+}
+
+.post-show-caption {
+  margin-top: 20px;
+}
+
+.show-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.post-time {
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.post-youtube {
+  font-size: 14px;
+  margin-left: 15px;
+  color: #FF0000;
+}
+
+.post-show-btn {
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 15px;
+}
+
+.post-show-btn2 {
+  margin-top: 15px;
+}
+
+
+.post-show-user-link {
+  color: black;
+}
+
+.post-show-user-link:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.post-show-user-icon{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: black;
+}
+
+.favorite-btn {
+  margin-top: 10px;
+}
+
+.favorite-btn2 {
+  font-size: 14px;
+  margin: 17px 13px 0 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: rgb(146, 146, 146);
+}
+
+.post-show-describe {
+  border-top: 1px solid rgba(233, 233, 233, 0.884);
+  margin-top: 2vh;
+  padding-bottom: 3vh;
+}
+
+.describe-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.describe-text {
+  margin-top: 20px;
+}
+
+.post-show-favorite {
+  margin-top: 20px;
+  border-top: 1px solid rgba(233, 233, 233, 0.884);
+}
+
+.favorite-title {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 3vh;
+  margin-top: 10px;
+}
+
+.show-favorite-scene {
+  margin-bottom: 50px;
+}
+
+.show-favorite-character {
+  border-top: 1px solid rgba(233, 233, 233, 0.884);
+}
+
+.post-show-url {
+  border-bottom: 1px solid rgba(233, 233, 233, 0.884);
+  margin-top: 2vh;
+  padding-bottom: 4vh;
+}
+
+.post-show-link-title {
+  margin-bottom: 2vh;
+  font-size: 20px;
+}
+
+.post-show-place {
+  margin: 2vh 0 2vh;
+}
+
+.post-show-comments {
+  padding-top: 2vh;
+}
+
+.comment-current-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+}

@@ -1,0 +1,65 @@
+<%= render "shared/header" %>
+
+<div class="post-show-contents">
+  <div class="post-show-content">
+    <div class="post-caption">
+      <span class="show-title"><%= @post.title %></span>
+      <div class="post-time">
+        <%= time_ago_in_words(@post.created_at)+"前に投稿" %>
+        <% if @post.spoiler.present? %>
+          <span class="post-youtube">ネタバレ有り</span>
+        <% end %>
+      </div>
+    </div>
+    <div class="post-image-content">
+      <%= image_tag @post.image, class: "show-image"%>
+    </div>
+    <div class="post-show-caption">
+      <%# 編集,削除機能 %>
+      <% if @post.user_id == current_user.id %>
+        <button type="button" class= "post-show-btn2 btn btn-secondary float-right btn-sm" data-toggle="modal" data-target="#exampleModal1">
+          投稿の削除
+        </button>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">投稿の削除</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                投稿を完全に削除しますか？
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                <%= link_to "投稿の削除", "", method: :delete, class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post-show-btn float-right">
+          <%= button_to "投稿の編集", "", method: :get, class: "btn btn-secondary btn-sm" %>
+        </div>
+      <% end %>
+      <%# /編集、削除機能 %>
+    </div>
+    <div class="post-show-user">
+      <%= link_to (image_tag "profile_icon.png", class: "post-show-user-icon"), "" %>
+      <%=link_to @post.user.name, "", class: "post-show-user-link"%>
+    </div>
+    <div class="post-show-describe">
+      <div class="describe-title">感想</div>
+      <div class="describe-text"><%=safe_join(@post.describe.split("\n"),tag(:br)) %></div>
+    </div>
+    <div class="post-show-favorite">
+      <div class="show-favorite-scene">
+        <div class="favorite-title">好きなシーン</div>
+        <div class="show-favorite-text"><%= @post.favorite_scene%></div>
+      </div>
+      <div class="show-favorite-character">
+        <div class="favorite-title">好きなキャラクター</div>
+        <div class="show-favorite-text"><%= @post.favorite_character%></div>
+      </div>
+    </div>
